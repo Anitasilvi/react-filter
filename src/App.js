@@ -10,6 +10,7 @@ function App() {
   const handleInputChange = event => {
     setQuery(event.target.value)
   }
+  const filteredItems = products.filter(product => product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1));
   return (
     <>
       <Sidebar/>
