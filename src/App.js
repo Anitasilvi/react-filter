@@ -5,13 +5,18 @@ import Sidebar from "./Sidebar/Sidebar";
 import { useState } from "react";
 import products from './db/data'
 import Card from "./components/Card";
+import './index.css'
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [query, setQuery] = useState("")
   const handleInputChange = event => {
     setQuery(event.target.value)
   }
-  const filteredItems = products.filter(product => product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1));
+  const filteredItems = products.filter(
+    (product) => 
+    product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== 
+    -1
+  )
   const handleChange = event => {
     setSelectedCategory(event.target.value)
   }
